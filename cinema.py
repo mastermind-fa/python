@@ -62,14 +62,3 @@ class Hall(Star_Cinema):
 
        
 
-cinema = Star_Cinema()
-hall1 = Hall(rows=5, cols=10, hall_no=1)   
-    
-hall1.entry_show('001', 'Inception', '18:00')
-hall1.entry_show('002', 'The Matrix', '20:00')
-            
-hall1.view_show_list()
-hall1.view_available_seats('001')            
-hall1.book_seats('001', [(0, 0), (0, 1), (1, 0)])
-hall1.view_available_seats('001')
-hall1.book_seats('001', [(0, 0)])
