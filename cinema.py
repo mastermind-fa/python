@@ -61,3 +61,30 @@ class Hall(Star_Cinema):
             print("No seats available")
 
        
+cinema = Star_Cinema()
+hall1 = Hall(rows=5, cols=10, hall_no=1)   
+    
+hall1.entry_show('001', 'Inception', '18:00')
+hall1.entry_show('002', 'The Matrix', '20:00')
+            
+
+
+print("Welcome to Star Cinemas")
+print("Choose your option")
+while True:
+    n=int(input("1. View show list\n2. View available seats\n3. Book seats\n4. Exit\n"))
+    if(n==1):
+        hall1.view_show_list()
+    elif(n==2):
+        showID=input("Enter show ID\n")
+        hall1.view_available_seats(showID)
+    elif(n==3):
+        showID=input("Enter show ID\n")
+        seats_input=input("Enter seat list (row,col)\n")
+        seat_list = [tuple(map(int, seat.split(','))) for seat in seats_input.split()]
+        
+        hall1.book_seats(showID, seat_list)
+    elif(n==4):
+        print("Thank you for using Star Cinemas")
+        exit()
+ 
